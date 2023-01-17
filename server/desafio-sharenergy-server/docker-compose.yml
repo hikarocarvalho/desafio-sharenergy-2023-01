@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .docker
+    entrypoint: .docker/entrypoint.sh
+    container_name: challenge-server
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/home/node/app
+    depends_on:
+          - challengedb
+          
+  challengedb:
+    image : mongo
+    container_name: challengedb
+    restart: always
+    tty: true
+    ports:
+      - "27017:27017"
+    volumes:
+      - .docker/dbdata:/data/db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
