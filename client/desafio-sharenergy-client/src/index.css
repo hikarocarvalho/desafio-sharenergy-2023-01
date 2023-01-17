@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/** import Roboto font **/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/** import bootstrap icons **/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
+/** default variables **/
+:root{
+  --defaultFirstColor:#6EC1E4;
+  --defaultSecondColor:#54595F;
+  --defaultThirdColor:rgba(0, 0, 0, 0.356);
+  --defaultFourthColor:#61CE70;
+  --defaultFifthColor:#e8ec9c;
+  --defaultSixthColor:#1ba2a2;
+  --defaultSeventhColor:#d6df279c;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to bottom right, var(--defaultFifthColor), var(--defaultSixthColor) , var(--defaultFifthColor));
+}
