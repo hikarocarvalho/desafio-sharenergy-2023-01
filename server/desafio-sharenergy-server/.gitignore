@@ -18,6 +18,8 @@ lerna-debug.log*
 /coverage
 /.nyc_output
 /.docker/dbdata
+/.env
+.env
 
 # IDEs and editors
 /.idea
