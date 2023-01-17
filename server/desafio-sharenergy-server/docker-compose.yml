@@ -2,6 +2,8 @@ services:
   app:
     build: .docker
     entrypoint: .docker/entrypoint.sh
+    environment:
+      - DATABASE_URL=mongodb://root:123456@localhost:27017/challenge?schema=public
     container_name: challenge-server
     ports:
       - '3000:3000'

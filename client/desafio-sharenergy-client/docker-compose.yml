@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .docker
+    entrypoint: .docker/entrypoint.sh
+    container_name: challenge-client
+    ports:
+      - '3001:3000'
+    volumes:
+      - .:/home/node/app
+    
