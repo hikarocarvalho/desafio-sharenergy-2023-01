@@ -29,7 +29,7 @@ code {
   --defaultSeventhColor:#d6df279c;
 }
 
-body{
+body,#root,.App{
   font-family: 'Roboto', sans-serif;
   display: flex;
   width: 100vw;
