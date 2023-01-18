@@ -1,21 +1,12 @@
-import {
-  Routes,
-  Route,
-} from "react-router-dom";
-import Login from '../Pages/Login/Login';
-import User from "../Pages/User/User";
-import HttpStatus from "../Pages/HttpStatus/HttpStatus";
-import RandomDog from "../Pages/RandomDog/RandomDog";
-import Customer from "../Pages/Customer/Customer";
+import { Routes, Route } from "react-router-dom";
+import RouteList from "./RouteList";
 
-export default function PageRoutes(){
-    return (
-        <Routes>
-          <Route path="/" element={<Login />}/>
-          <Route path="/users" element={<User />}/>
-          <Route path="/httpstatus" element={<HttpStatus />}/>
-          <Route path="/randomdog" element={<RandomDog />}/>
-          <Route path="/customer" element={<Customer />}/>         
-        </Routes>
-    );
+export default function PageRoutes() {
+  return (
+    <Routes>
+      {RouteList.map((route) => (
+        <Route path={route.route} element={route.element} />
+      ))}
+    </Routes>
+  );
 }
