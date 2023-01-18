@@ -2,7 +2,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Login from '../Pages/login/Login';
+import Login from '../Pages/Login/Login';
 import User from "../Pages/User/User";
 import HttpStatus from "../Pages/HttpStatus/HttpStatus";
 import RandomDog from "../Pages/RandomDog/RandomDog";
