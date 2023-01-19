@@ -1,0 +1,13 @@
+.page {
+  margin-left: 0rem;
+  margin-top: 3.5rem;
+  height: 90%;
+}
+
+@media only screen and (min-width: 700px) {
+  .page {
+    margin-left: 3.5rem;
+    margin-top: 0;
+    height: 100%;
+  }
+}
