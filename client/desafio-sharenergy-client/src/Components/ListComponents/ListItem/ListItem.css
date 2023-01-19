@@ -1,0 +1,80 @@
+.list-item {
+  background-color: var(--defaultSixthColor);
+  height: auto;
+  margin-bottom: 1em;
+  border-radius: 0px;
+  box-shadow: 4px 4px 2px 1px var(--defaultThirdColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 0.5em;
+}
+
+.photo {
+  font-size: 4em !important;
+  color: white;
+  width: 1.2em;
+  max-width: auto;
+  height: 80%;
+  margin: 10px;
+  background-color: rgba(0, 0, 0, 0.486);
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.name,
+.email,
+.username,
+.age {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 0;
+}
+
+.data-name,
+.data-email,
+.data-username,
+.data-age {
+  margin: 0em;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: 700px) {
+  .list-item {
+    flex-direction: row;
+    height: 6em;
+  }
+  .name,
+  .email,
+  .username,
+  .age {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+  }
+  .data-name,
+  .data-email,
+  .data-username,
+  .data-age {
+    margin: 1em;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+  .data-name {
+    width: 30%;
+  }
+  .data-age {
+    width: 10%;
+  }
+}
