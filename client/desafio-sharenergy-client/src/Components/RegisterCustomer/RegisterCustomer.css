@@ -1,0 +1,32 @@
+.register-customer {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.fieldset:last-child {
+  margin-left: 1em;
+}
+
+@media only screen and (min-width: 200px) {
+  .register-customer {
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-right: 1em;
+  }
+  .fieldset:last-child {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .register-customer {
+    flex-direction: row;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding-right: 0;
+  }
+  .fieldset:last-child {
+    margin-left: 1em;
+  }
+}
