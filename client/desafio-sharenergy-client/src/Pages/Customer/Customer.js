@@ -1,8 +1,36 @@
-import './Customer.css';
+import Search from "../../Components/Search/Search";
+import List from "../../Components/ListComponents/List/List";
+import "./Customer.css";
+import Button from "../../Components/FormComponents/Button/Button";
+import { ModalContext } from "../../App";
+import { useContext, useEffect } from "react";
+import RegisterCustomer from "../../Components/RegisterCustomer/RegisterCustomer";
 
-export default function Customer(){
-    return (
-        <section className="customer">
-        </section>
-    );
-};
+export default function Customer() {
+  const { appState, setAppState } = useContext(ModalContext);
+
+  const newCustomer = (event) => {
+    event.preventDefault();
+    setAppState({
+      ...appState,
+      modal: {
+        view: true,
+        title: "Registrar Novo Cliente",
+        component: <RegisterCustomer />,
+      },
+    });
+    console.log("clicou");
+  };
+
+  useEffect(() => {}, []);
+
+  return (
+    <section className="customer page">
+      <Search />
+
+      <List>
+        <Button description={"+"} className="add" onClick={newCustomer} />
+      </List>
+    </section>
+  );
+}
