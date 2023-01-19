@@ -3,7 +3,6 @@ import "./SideBarItem.css";
 
 export default function SideBarItem(props) {
   const location = useLocation();
-  console.log(location.pathname);
   return (
     <li className="nav-item">
       <Link
