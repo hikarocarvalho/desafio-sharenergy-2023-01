@@ -1,0 +1,30 @@
+.http-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.stats-container {
+  background-color: white;
+  width: 90%;
+  padding: 1em;
+  height: 95%;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 0px 3px 1px var(--e-global-color-text);
+}
+
+.cat-image {
+  font-size: 20em !important;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
