@@ -9,3 +9,35 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model DbUser {
+  id              Int         @id                                               @default(autoincrement())
+  customer        DbCustomer  @relation(fields: [customerId],references: [id])
+  customerId      Int         @unique
+  name            String      @unique
+  password        String
+  createAt        DateTime?                                                     @default(now())
+  deleteAt        DateTime?
+
+  @@map("user")
+}
+
+model DbCustomer{
+  id            Int       @id       @default(autoincrement())
+  name          String
+  cpf           String    @unique
+  email         String    @unique
+  telPhone      String
+  postCode      String
+  addressNumber String
+  street        String
+  block         String
+  city          String
+  state         String
+  complement    String
+  users         DbUser?
+  createAt      DateTime?            @default(now())
+  deleteAt      DateTime?
+
+  @@map("customer")
+}
