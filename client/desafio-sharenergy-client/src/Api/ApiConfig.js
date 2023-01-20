@@ -2,10 +2,10 @@ import axios from "axios";
 
 const accessToken = localStorage.getItem("auth");
 
-const ApiConfig = {
+const ApiConfig = (url) => ({
   // use with authenticate routes
   withAutenticate: axios.create({
-    baseURL: "http://localhost:3000/",
+    baseURL: url,
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
@@ -13,9 +13,9 @@ const ApiConfig = {
   }),
   // use with not authenticate routes
   withOutAutenticate: axios.create({
-    baseURL: "http://localhost:3000/",
+    baseURL: url,
     responseType: "json",
   }),
-};
+});
 
 export default ApiConfig;
