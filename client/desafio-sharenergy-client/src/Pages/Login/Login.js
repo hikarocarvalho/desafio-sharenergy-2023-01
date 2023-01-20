@@ -10,7 +10,7 @@ export default function Login() {
       <div className="login-out-box">
         <div className="login-container">
           <Form>
-            <i class="bi bi-person logo"></i>
+            <i className="bi bi-person logo"></i>
             <Input type={"text"} label={"Usuário"} icon={"bi-person"} />
             <Input type={"password"} label={"Senha"} icon={"bi-key"} />
             <CheckBox value={"Manter conectado"} />

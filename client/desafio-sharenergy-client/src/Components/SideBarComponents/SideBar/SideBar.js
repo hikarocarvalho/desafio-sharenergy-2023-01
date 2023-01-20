@@ -17,7 +17,7 @@ export default function SideBar() {
   return (
     <>
       <div className="menu-icon" onClick={openMenu}>
-        <i class="bi bi-grid-fill"></i>
+        <i className="bi bi-grid-fill"></i>
       </div>
       <aside
         className={
@@ -29,7 +29,11 @@ export default function SideBar() {
         <ul className="nav nav-pills nav-flush flex-column mb-auto text-center">
           {RouteList.map((item, index) =>
             item.icon ? (
-              <SideBarItem icon={item.icon} route={item.route} key={index} />
+              <SideBarItem
+                icon={item.icon}
+                route={item.route}
+                key={"sideBarItem" + index}
+              />
             ) : (
               ""
             )

@@ -5,7 +5,7 @@ export default function Input(props) {
     <div className="input-group mb-3">
       <div className="input-group-prepend">
         <span className="input-group-text" id="basic-addon1">
-          <i class={"bi " + props.icon}></i>
+          <i className={"bi " + props.icon}></i>
         </span>
       </div>
       <input
