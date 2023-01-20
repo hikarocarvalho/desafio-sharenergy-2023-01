@@ -5,8 +5,16 @@ import RouteList from "./RouteList";
 export default function MenuRoutes() {
   return (
     <Routes>
-      {RouteList.map((route) =>
-        route.icon ? <Route path={route.route} element={<SideBar />} /> : ""
+      {RouteList.map((route, index) =>
+        route.icon ? (
+          <Route
+            path={route.route}
+            element={<SideBar />}
+            key={"menu" + index}
+          />
+        ) : (
+          ""
+        )
       )}
     </Routes>
   );

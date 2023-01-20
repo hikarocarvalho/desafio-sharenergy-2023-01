@@ -4,8 +4,12 @@ import RouteList from "./RouteList";
 export default function PageRoutes() {
   return (
     <Routes>
-      {RouteList.map((route) => (
-        <Route path={route.route} element={route.element} />
+      {RouteList.map((route, index) => (
+        <Route
+          path={route.route}
+          element={route.element}
+          key={"page" + index}
+        />
       ))}
     </Routes>
   );
