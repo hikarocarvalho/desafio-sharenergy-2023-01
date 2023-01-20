@@ -16,13 +16,12 @@ export default function RandomDog() {
     if (!dog) {
       Dog.getDog().then((response) => setDog(response.data));
     }
-  }, []);
+  }, [dog]);
 
-  console.log(dog);
   return (
     <section className="random-dog page">
       <div className="stats-container">
-        <Img src={Dog.url + dog} />
+        <Img src={Dog.url + dog} alt={"Random dog image"} />
         <Button description={"Gerar Novo Cachorro"} onClick={newDog} />
       </div>
     </section>
