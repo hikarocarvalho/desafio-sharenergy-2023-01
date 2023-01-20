@@ -23,10 +23,15 @@ export default function HttpStatus() {
     setCatImage(event.target.value);
   };
 
+  useEffect(() => {}, [catImage]);
+
   return (
     <section className="http-status page">
       <div className="stats-container">
-        <Img src={"https://http.cat/" + catImage} />
+        <Img
+          src={"https://http.cat/" + catImage}
+          alt={"http request status code cat image"}
+        />
         <Select value={selectStatusList} onChange={getStatusValue} />
       </div>
     </section>
