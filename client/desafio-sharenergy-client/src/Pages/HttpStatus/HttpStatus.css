@@ -16,15 +16,7 @@
   border-radius: 2px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   box-shadow: 0px 0px 3px 1px var(--e-global-color-text);
-}
-
-.cat-image {
-  font-size: 20em !important;
-  width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
