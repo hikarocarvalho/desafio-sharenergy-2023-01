@@ -1,25 +1,36 @@
 import "./ListItem.css";
 
-export default function ListItem() {
+export default function ListItem(props) {
   return (
-    <div className="list-item">
-      <i className="bi bi-person-dash photo"></i>
-      <div className="data-name">
-        <label className="name">Nome Completo:</label>
-        <label className="data">Bruna jhonas</label>
-      </div>
-      <div className="data-email">
-        <label className="email">Email:</label>
-        <label className="data">bruna@gmail.com</label>
-      </div>
-      <div className="data-username">
-        <label className="username">Username:</label>
-        <label className="data">brunajhonas</label>
-      </div>
-      <div className="data-age">
-        <label className="age">Idade:</label>
-        <label className="data">25</label>
-      </div>
-    </div>
+    <>
+      {props.data ? (
+        <div className="list-item">
+          {props.data.map((values, index) =>
+            values.dataTitle === "photo" ? (
+              <img
+                className="photo"
+                src={(values = values.dataValue)}
+                key={"UserPhoto" + index}
+                alt={"User Photo" + index}
+              />
+            ) : (
+              ""
+            )
+          )}
+          {props.data.map((values, index) =>
+            values.dataTitle !== "photo" ? (
+              <div className="data" key={values.dataTitle + index}>
+                <label className="data-title">{values.dataTitle}:</label>
+                <label className="data-value">{values.dataValue}</label>
+              </div>
+            ) : (
+              ""
+            )
+          )}
+        </div>
+      ) : (
+        ""
+      )}
+    </>
   );
 }

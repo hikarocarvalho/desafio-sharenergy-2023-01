@@ -14,6 +14,8 @@ export default function Input(props) {
         placeholder={props.label}
         aria-label={props.label}
         aria-describedby="basic-addon1"
+        name={props.name}
+        id={props.name}
       />
     </div>
   );

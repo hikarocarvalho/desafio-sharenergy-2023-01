@@ -28,20 +28,16 @@
   padding: 0;
 }
 
-.name,
-.email,
-.username,
-.age {
+.data-title,
+.data-value {
   display: flex;
   flex-direction: row;
   width: 50%;
   margin: 0;
+  word-wrap: break-word;
 }
 
-.data-name,
-.data-email,
-.data-username,
-.data-age {
+.data {
   margin: 0em;
   width: 100%;
   display: flex;
@@ -53,28 +49,35 @@
     flex-direction: row;
     height: 6em;
   }
-  .name,
-  .email,
-  .username,
-  .age {
+  .data-title,
+  .data-value {
     display: flex;
     flex-direction: row;
+    max-width: 100%;
     width: 100%;
     margin: 0;
   }
-  .data-name,
-  .data-email,
-  .data-username,
-  .data-age {
+  .data {
     margin: 1em;
     width: 20%;
-    display: flex;
+    height: 5em;
+    display: block;
     flex-direction: column;
   }
-  .data-name {
+  .data:nth-child(2) {
+    min-width: 25%;
+    width: 25%;
+  }
+  .data:nth-child(3) {
+    min-width: 30%;
     width: 30%;
   }
-  .data-age {
-    width: 10%;
+  .data:nth-child(4) {
+    max-width: 15%;
+    width: 15%;
+  }
+  .data:last-child {
+    max-width: 5%;
+    width: 5%;
   }
 }
