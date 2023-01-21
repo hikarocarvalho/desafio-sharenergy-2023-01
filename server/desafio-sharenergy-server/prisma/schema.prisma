@@ -12,18 +12,18 @@ datasource db {
 
 model DbUser {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  customer        DbCustomer  @relation(fields: [customerId],references: [id])
-  customerId      String      @unique  @db.ObjectId
   name            String      @unique
   password        String
   createAt        DateTime?                                                     @default(now())
   deleteAt        DateTime?
-
+ customers        DbCustomer[]
   @@map("user")
 }
 
 model DbCustomer{
   id String @id @default(auto()) @map("_id") @db.ObjectId
+  user       DbUser  @relation(fields: [userId],references: [id])
+  userId      String      @unique  @db.ObjectId
   name          String
   cpf           String    @unique
   email         String    @unique
@@ -35,7 +35,6 @@ model DbCustomer{
   city          String
   state         String
   complement    String
-  users         DbUser?
   createAt      DateTime?            @default(now())
   deleteAt      DateTime?
 

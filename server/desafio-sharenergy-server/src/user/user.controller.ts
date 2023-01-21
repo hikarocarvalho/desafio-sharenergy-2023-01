@@ -24,8 +24,6 @@ export class UserController {
   @ApiOperation({
     description: 'Used to return all data values from User table',
   })
-  @UseGuards(AuthGuard())
-  @ApiBearerAuth()
   @Get()
   findAll() {
     return this.UserService.findAll();
@@ -44,8 +42,6 @@ export class UserController {
   @ApiOperation({
     description: 'Used to register a new user',
   })
-  @UseGuards(AuthGuard())
-  @ApiBearerAuth()
   @Post()
   @HttpCode(HttpStatus.NO_CONTENT)
   create(@Body() createUserDto: CreateUserDto) {

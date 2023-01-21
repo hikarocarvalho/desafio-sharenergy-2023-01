@@ -1,4 +1,5 @@
-import Customer from "../Pages/Customer/Customer";
+import AuthPage from "../Components/AuthPage/AuthPage";
+import Customers from "../Pages/Customer/Customers";
 import HttpStatus from "../Pages/HttpStatus/HttpStatus";
 import Login from "../Pages/Login/Login";
 import RandomDog from "../Pages/RandomDog/RandomDog";
@@ -12,22 +13,38 @@ const RouteList = [
   {
     icon: "bi-house-door-fill",
     route: "/users",
-    element: <User />,
+    element: (
+      <AuthPage>
+        <User />
+      </AuthPage>
+    ),
   },
   {
     icon: "bi-heptagon-fill",
     route: "/httpstatus",
-    element: <HttpStatus />,
+    element: (
+      <AuthPage>
+        <HttpStatus />
+      </AuthPage>
+    ),
   },
   {
     icon: "bi-images",
     route: "/randomdog",
-    element: <RandomDog />,
+    element: (
+      <AuthPage>
+        <RandomDog />
+      </AuthPage>
+    ),
   },
   {
     icon: "bi-people-fill",
     route: "/customers",
-    element: <Customer />,
+    element: (
+      <AuthPage>
+        <Customers />
+      </AuthPage>
+    ),
   },
 ];
 

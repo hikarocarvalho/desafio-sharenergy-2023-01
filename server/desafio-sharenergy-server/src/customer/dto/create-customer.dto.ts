@@ -78,4 +78,11 @@ export class CreateCustomerDto {
   })
   @IsString()
   readonly complement: string;
+  @ApiProperty({
+    description:
+      'Here goes the userId String, to link a customer registration to a user',
+    example: '1AAA2BBB',
+  })
+  @IsString()
+  readonly userId: string;
 }

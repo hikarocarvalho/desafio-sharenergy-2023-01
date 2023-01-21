@@ -12,6 +12,7 @@ export class Customer implements Prisma.DbCustomerUncheckedCreateInput {
   city: string;
   state: string;
   complement: string;
+  userId: string;
   createAt?: Date;
   deleteAt?: Date | null;
 }

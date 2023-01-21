@@ -16,6 +16,10 @@ export default function Input(props) {
         aria-describedby="basic-addon1"
         name={props.name}
         id={props.name}
+        onKeyDown={props.onKeyDown ? props.onKeyDown : undefined}
+        onChange={props.onChange ? props.onChange : undefined}
+        maxLength={props.maxLength ? props.maxLength : undefined}
+        required
       />
     </div>
   );

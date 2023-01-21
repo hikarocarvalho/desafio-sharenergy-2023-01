@@ -1,11 +1,24 @@
 import { Module } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { UserRepository } from './repositories/user.repositories';
+import { PrismaModule } from 'src/prisma/prisma.module';
 import { UserController } from './user.controller';
+import { JwtModule } from '@nestjs/jwt';
+import { PassportModule } from '@nestjs/passport';
 import { UserService } from './user.service';
 
 @Module({
+  imports: [
+    PrismaModule,
+    PassportModule.register({
+      defaultStrategy: 'jwt',
+    }),
+    JwtModule.register({
+      secret: process.env.JWT_SECRET,
+      signOptions: {
+        expiresIn: '12h',
+      },
+    }),
+  ],
   controllers: [UserController],
-  providers: [UserService, PrismaService, UserRepository],
+  providers: [UserService],
 })
 export class UserModule {}

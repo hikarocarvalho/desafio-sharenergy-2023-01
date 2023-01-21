@@ -1,12 +1,12 @@
 import Search from "../../Components/Search/Search";
 import List from "../../Components/ListComponents/List/List";
-import "./Customer.css";
+import "./Customers.css";
 import Button from "../../Components/FormComponents/Button/Button";
 import { ModalContext } from "../../App";
 import { useContext, useEffect } from "react";
 import RegisterCustomer from "../../Components/RegisterCustomer/RegisterCustomer";
 
-export default function Customer() {
+export default function Customers() {
   const { appState, setAppState } = useContext(ModalContext);
 
   const newCustomer = (event) => {
@@ -19,7 +19,6 @@ export default function Customer() {
         component: <RegisterCustomer />,
       },
     });
-    console.log("clicou");
   };
 
   useEffect(() => {}, []);

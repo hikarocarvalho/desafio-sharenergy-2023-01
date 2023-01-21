@@ -3,23 +3,41 @@ import Fieldset from "../FormComponents/Fieldset/Fieldset";
 import Button from "../FormComponents/Button/Button";
 import Input from "../FormComponents/Input/Input";
 import "./RegisterCustomer.css";
+import Cep from "../../scripts/Cep";
+import Cpf from "../../scripts/Cpf";
+import Telphone from "../../scripts/Telphone";
+import Customer from "../../Entities/Customer";
 
 export default function RegisterCustomer() {
   return (
     <Form className={"register-customer"}>
       <Fieldset title={"Dados Pessoais"}>
-        <Input type={"text"} label={"Nome"} icon={"bi-person"} />
-        <Input type={"text"} label={"Email"} icon={"bi-envelope-paper"} />
-        <Input type={"text"} label={"Telefone"} icon={"bi-headset"} />
-        <Input type={"text"} label={"Cpf"} icon={"bi-person"} />
+        {Customer.RegisterPayLoad[0].map((input, index) => (
+          <Input
+            type={input.type ? input.type : undefined}
+            label={input.label ? input.label : undefined}
+            icon={input.icon ? input.icon : undefined}
+            onKeyDown={input.onKeyDown ? input.onKeyDown : undefined}
+            onChange={input.onChange ? input.onChange : undefined}
+            maxLength={input.maxLength ? input.maxLength : undefined}
+            name={input.name ? input.name : undefined}
+            key={input.name + index}
+          />
+        ))}
       </Fieldset>
       <Fieldset title={"Dados de Endereço"}>
-        <Input type={"text"} label={"Cep"} icon={"bi-building"} />
-        <Input type={"text"} label={"Logradouro"} icon={"bi-building"} />
-        <Input type={"text"} label={"Complemento"} icon={"bi-building"} />
-        <Input type={"text"} label={"Bairro"} icon={"bi-building"} />
-        <Input type={"text"} label={"Cidade"} icon={"bi-building"} />
-        <Input type={"text"} label={"Estado"} icon={"bi-building"} />
+        {Customer.RegisterPayLoad[1].map((input, index) => (
+          <Input
+            type={input.type ? input.type : undefined}
+            label={input.label ? input.label : undefined}
+            icon={input.icon ? input.icon : undefined}
+            onKeyDown={input.onKeyDown ? input.onKeyDown : undefined}
+            onChange={input.onChange ? input.onChange : undefined}
+            maxLength={input.maxLength ? input.maxLength : undefined}
+            name={input.name ? input.name : undefined}
+            key={input.name + index}
+          />
+        ))}
         <Button description={"Registrar"} />
       </Fieldset>
     </Form>

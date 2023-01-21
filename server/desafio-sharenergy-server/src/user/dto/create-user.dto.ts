@@ -1,24 +1,20 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 
 export class CreateUserDto {
   @ApiProperty({
-    description:
-      'Here goes the customerId String, to link a customer registration to a user',
-    example: '1AAA2BBB',
+    description: 'Receive one email from the user',
+    example: 'joaao',
   })
+  @IsNotEmpty()
   @IsString()
-  readonly customerId: string;
+  name: string;
+
   @ApiProperty({
-    description: 'Here goes the name of The User',
-    example: 'João',
+    description: 'User Password.',
+    example: 'wefasdf@gsa_56',
   })
+  @IsNotEmpty()
   @IsString()
-  readonly name: string;
-  @ApiProperty({
-    description: 'Here goes the user password',
-    example: 'SStt112Rt',
-  })
-  @IsString()
-  readonly password: string;
+  password: string;
 }

@@ -8,6 +8,7 @@ export default function CheckBox(props) {
           <input
             type="checkbox"
             aria-label="Checkbox for following text input"
+            name={props.name ? props.name : undefined}
           />
         </span>
       </div>
