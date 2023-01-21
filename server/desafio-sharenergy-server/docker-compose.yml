@@ -1,0 +1,30 @@
+services:
+  challengedb:
+    build: .docker/mongo
+    container_name: challengedb
+    restart: always
+    tty: true
+    ports:
+      - '27017:27017'
+    volumes:
+      - .docker/dbdata:/data/db
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=123456
+      - MONGO_INITDB_DATABASE=challenge
+
+  challenge-server:
+    build: .docker
+    entrypoint: .docker/entrypoint.sh
+    environment:
+      - DATABASE_URL=mongodb://root:123456@challengedb:27017/challenge?authSource=admin
+      - JWT_SECRET="$2a$12$.RVpGIERxAedkSZtA9v68uUirQffYNbdwcs01aNlx5sCCGTRpxCQa"
+    container_name: challenge-server
+    ports:
+      - '3000:3000'
+    volumes:
+      - .:/home/node/app
+    depends_on:
+      - challengedb

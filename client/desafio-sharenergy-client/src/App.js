@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect, createContext } from "react";
+import { BrowserRouter } from "react-router-dom";
+import MenuRoutes from "./Routes/MenuRoutes";
+import PageRoutes from "./Routes/PageRoutes";
+import Modal from "./Components/Modal/Modal";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+
+export const ModalContext = createContext(null);
 
 function App() {
+  const [appState, setAppState] = useState({
+    modal: {
+      view: false,
+      title: "",
+      component: <></>,
+    },
+  });
+
+  useEffect(() => {}, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ModalContext.Provider value={{ appState, setAppState }}>
+        <BrowserRouter>
+          <MenuRoutes />
+          <PageRoutes />
+        </BrowserRouter>
+        <Modal />
+      </ModalContext.Provider>
+      <ToastContainer
+        position="bottom-right"
+        toastStyle={{
+          backgroundColor: "var(--defaultSixthColor)",
+          color: "black",
+          fill: "var(--defaultThirdColor)",
+        }}
+      />
     </div>
   );
 }

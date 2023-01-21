@@ -1,0 +1,62 @@
+.nav-pills .nav-link.active {
+  background-color: var(--defaultSixthColor);
+}
+
+.nav-link,
+.nav-link:hover {
+  color: var(--defaultSixthColor);
+}
+
+.nav-link:hover {
+  text-shadow: 2px 2px var(--defaultThirdColor);
+}
+
+.side-menu {
+  box-shadow: 0px 0px 3px 1px var(--defaultThirdColor);
+}
+
+.search-container .btn {
+  margin-bottom: 1em;
+}
+
+.side-menu {
+  width: 3.5rem;
+  height: 100%;
+  position: absolute;
+  z-index: 3;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 3.5rem;
+  height: 3.5em;
+  cursor: pointer;
+  position: absolute;
+  z-index: 5;
+  background-color: white;
+  box-shadow: 0px 0px 3px 1px var(--defaultThirdColor);
+}
+
+.menu-icon .bi-grid-fill {
+  color: var(--defaultSixthColor);
+}
+
+.side-menu-view {
+  display: flex !important;
+}
+.side-menu-hide {
+  display: none !important;
+}
+
+@media only screen and (min-width: 700px) {
+  .menu-icon {
+    display: none;
+  }
+}

@@ -1,0 +1,14 @@
+.side-bar-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.nav-item:first-child {
+  margin-top: 3.5rem;
+}
+
+@media only screen and (min-width: 700px) {
+  .nav-item:first-child {
+    margin-top: 0rem;
+  }
+}
